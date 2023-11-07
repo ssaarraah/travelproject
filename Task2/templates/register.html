@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+       * {
+    padding: 0px;
+    margin: 0px;
+    }
+    body {
+        background-color: pink;
+    }
+    header {
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 15vh;
+        box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+    }
+    h1 {
+        letter-spacing: 1.5vw;
+        font-family: 'system-ui';
+        text-transform: uppercase;
+        text-align: center;
+    }
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 75vh;
+        width: 100%;
+        background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Mountains-1412683.svg/1280px-Mountains-1412683.svg.png) no-repeat center center;
+        background-size: cover;
+    }
+    .form_class {
+        width: 500px;
+        padding: 40px;
+        border-radius: 8px;
+        background-color: white;
+        font-family: 'system-ui';
+        box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+    }
+    .form_div {
+        text-transform: uppercase;
+    }
+    .form_div > label {
+        letter-spacing: 3px;
+        font-size: 1rem;
+    }
+    .info_div {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .info_div {
+        letter-spacing: 1px;
+    }
+    .field_class {
+        width: 100%;
+        border-radius: 6px;
+        border-style: solid;
+        border-width: 1px;
+        padding: 5px 0px;
+        text-indent: 6px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-family: 'system-ui';
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+    .submit_class {
+        border-style: none;
+        border-radius: 5px;
+        background-color: #FFE6D4;
+        padding: 8px 20px;
+        font-family: 'system-ui';
+        text-transform: uppercase;
+        letter-spacing: .8px;
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
+        cursor: pointer;
+    }
+    footer {
+        height: 10vh;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: -5px -5px 10px rgb(0,0,0,0.3);
+    }
+    footer > p {
+        text-align: center;
+        font-family: 'system-ui';
+        letter-spacing: 3px;
+    }
+    footer > p > a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+    </style>
+    <title>REGISTER</title>
+</head>
+<body>
+    <header>
+        <h1>Registration</h1>
+    </header>
+    <main>
+        <form action="register" method="post">
+            {% csrf_token %}
+            <div class="form_div">
+                <label>Username:</label>
+                <input class="field_class" type="text" name="username" placeholder="Enter Username"><br>
+                <label>First Name:</label>
+                <input class="field_class" type="text" name="first_name" placeholder="Enter First name"><br>
+                <label>Last Name:</label>
+                <input class="field_class" type="text" name="last_name" placeholder="Enter Last Name"><br>
+                <label>Email ID:</label>
+                <input class="field_class" type="email" name="email" placeholder="Enter Email"><br>
+                <label>Password:</label>
+                <input class="field_class" type="password" name="password" placeholder="Enter Password"><br>
+                <label>Confirm Password:</label>
+                <input class="field_class" type="password" name="password1" placeholder="Confirm Password"><br>
+                <button class="submit_class" type="submit"> Enter </button>
+
+<!--                <label>Login:</label>-->
+<!--                <input class="field_class" name="username" type="text" placeholder="enter your username" autofocus>-->
+<!--                <label>Password:</label>-->
+<!--                <input id="pass" class="field_class" name="password" type="password" placeholder="enter your password">-->
+<!--                <button class="submit_class" type="submit">Enter</button>-->
+            </div>
+
+        </form>
+        {% for msg in messages %}
+        <h2> {{msg}} </h2>
+        {% endfor %}
+    </main>
+
+</body>
+<!--<body>-->
+<!--<H2> REGISTER </H2>-->
+<!--<form action="register" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    <input type="text" name="username" placeholder="Enter Username"><br>-->
+<!--     <input type="text" name="first_name" placeholder="Enter First name"><br>-->
+<!--     <input type="text" name="last_name" placeholder="Enter Last Name"><br>-->
+<!--     <input type="email" name="email" placeholder="Enter Email"><br>-->
+<!--     <input type="password" name="password" placeholder="Enter Password"><br>-->
+<!--     <input type="password" name="password1" placeholder="Confirm Password"><br>-->
+<!--    <input type="submit"><br>-->
+
+<!--</form>-->
+<!--{% for msg in messages %}-->
+<!--<h2> {{msg}} </h2>-->
+<!--{% endfor %}-->
+<!--</body>-->
+</html>
